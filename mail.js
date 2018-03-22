@@ -1,17 +1,22 @@
 var nodemailer = require('nodemailer')
+    mail     = require('./config/aName')
+
+// require('./server')
+    // require('./server')(aName)
 
 var transporter = nodemailer.createTransport({
     host: 'smtp.office365.com', // Office 365 server
     port: 587,     // secure SMTP
-    secure: false, // false for TLS - as a boolean not string - but the default is false so just remove this completely
+    secure: false,
     auth: {
-        user: 'burger',
-        pass: 'password'
+        user: mail.emailUser, // Insert mail user into a config file using module.exports
+        pass: mail.emailPassword // Insert mail password into a config file using module.exports
     },
     tls: {
         rejectUnauthorized: false
     }
 });
+console.log('mail læst')
 let helperOptions = {
     from: '"andreas" <andreas@mrcaptain.info>',
     to: '<andreas@mrcaptain.info>',
