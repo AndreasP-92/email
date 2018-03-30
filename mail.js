@@ -18,10 +18,10 @@ var transporter = nodemailer.createTransport({
 });
 console.log('mail læst')
 let helperOptions = {
-    from: '"andreas" <andreas@mrcaptain.info>',
-    to: '<andreas@mrcaptain.info>',
-    subject: 'Hallo World!',
-    text: 'wow this is wonderful!'
+    from: `"andreas" <andreas@mrcaptain.info>`,
+    to: `<andreas@mrcaptain.info>`,
+    subject: `Hallo World!`,
+    text: `wow this is wonderful!`
 }
 transporter.sendMail(helperOptions, (err, info) =>{
     if (err){
